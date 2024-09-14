@@ -1,4 +1,4 @@
-import mongoose,{Schema, Document} from "mongoose";
+import mongoose,{Schema, Document, Model} from "mongoose";
 
 export interface Message extends Document{
   content:string;
@@ -65,3 +65,7 @@ const userSchema:Schema<User> = new Schema({
       messages:[messageSchema]
       
 })
+
+const UserModel:Model<User> = mongoose.models.User || mongoose.model<User>("User", userSchema)
+
+export default UserModel
