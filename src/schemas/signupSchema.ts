@@ -11,3 +11,5 @@ export const usernameValidation = z
     email:z.string().email({message:'Invalid email'}),
     password:z.string().min(6,'Minimum 6 character has been required')
  })
+
+ 
