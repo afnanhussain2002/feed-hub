@@ -7,5 +7,7 @@ type connectionObject ={
 const connection : connectionObject = {}
 
 async function dbConnect(){
-    
+
 }
+
+export default dbConnect;
