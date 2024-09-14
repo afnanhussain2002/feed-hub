@@ -1,8 +1,8 @@
 import mongoose,{Schema, Document} from "mongoose";
 
 export interface Message extends Document{
-  content:string,
-  createdAt:Date
+  content:string;
+  createdAt:Date;
 }
 
 export const messageSchema:Schema<Message> = new Schema({
@@ -18,5 +18,13 @@ export const messageSchema:Schema<Message> = new Schema({
 })
 
 export interface User extends Document{
-    
-  }
+    username:string;
+    email:string;
+    password:string;
+    verifyCode:string;
+    verifyCodeExpiry:string;
+    acceptMessage:boolean;
+    isVerified:boolean;
+    messages:Message[]
+
+}
