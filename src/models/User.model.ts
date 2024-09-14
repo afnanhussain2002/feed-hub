@@ -16,3 +16,7 @@ export const messageSchema:Schema<Message> = new Schema({
         default:Date.now()
      }
 })
+
+export interface User extends Document{
+    
+  }
