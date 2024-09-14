@@ -10,13 +10,22 @@ export async function POST(request:Request){
      try {
        const {username, email, password} = await request.json()
 
-      const existingUserByEmail = await UserModel.find({
+      const existingUserByUsername = await UserModel.find({
         username,
         isVerified:true
        })
 
+       if (existingUserByUsername) {
+        return jsonResponse(false,"Username  is already exists",401)
+       }
+
+       const existingUserByEmail = await UserModel.findOne({email})
+
        if (existingUserByEmail) {
-        return jsonResponse(false,"Username is already exists",401)
+        true
+       }else{
+        const hashedPassword = await bcrypt.hash(password, 10)
+        
        }
 
      } catch (error) {
