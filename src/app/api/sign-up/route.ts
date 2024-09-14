@@ -8,6 +8,6 @@ export async function POST(requset:Request){
      try {
         
      } catch (error) {
-        
+        console.log('Error registering user', error);
      }
 }
