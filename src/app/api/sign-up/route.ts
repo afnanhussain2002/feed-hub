@@ -11,14 +11,14 @@ export async function POST(request:Request){
        const {username, email, password} = await request.json()
 
       const existingUserByEmail = await UserModel.find({
-        email,
+        username,
         isVerified:true
        })
 
        if (existingUserByEmail) {
-        return jsonResponse(false,"Email is already exists",401)
+        return jsonResponse(false,"Username is already exists",401)
        }
-       
+
      } catch (error) {
         console.log('Error registering user', error);
         return jsonResponse(false, "Error registering user", 500)
