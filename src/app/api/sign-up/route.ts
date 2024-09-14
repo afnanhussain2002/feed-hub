@@ -52,6 +52,8 @@ export async function POST(request: Request) {
     if (!emailResponse.success) {
         return jsonResponse(false, emailResponse.message, 501);
     }
+    return jsonResponse(true,"User register successfully, Please verify your email", 200);
+
   } catch (error) {
     console.log("Error registering user", error);
     return jsonResponse(false, "Error registering user", 500);
