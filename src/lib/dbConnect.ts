@@ -6,3 +6,6 @@ type connectionObject ={
 
 const connection : connectionObject = {}
 
+async function dbConnect(){
+    
+}
